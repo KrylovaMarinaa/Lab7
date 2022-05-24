@@ -1,0 +1,43 @@
+﻿@model Lab7.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+        body {
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-center">
+        @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+        <h1>Спасибо, @Model.Name!</h1>
+        <div class="lead">
+            @if (Model.WillAttend == true)
+            {
+                @:Здорово что вы придете, напитки уже в холодильнике ;)
+
+            }
+            else
+            {
+                @:Жаль что вы не придете, но спасибо что дали об этом знать.
+            }
+
+
+
+        </div>
+        <div class="btn btn-success">
+            @Html.ActionLink("На главную", "Index")
+        </div>
+    </div>
+</body>
+</html>
